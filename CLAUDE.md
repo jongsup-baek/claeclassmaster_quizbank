@@ -15,6 +15,9 @@
 - [jongsup-baek/claeclassmaster_quizbank](https://github.com/jongsup-baek/claeclassmaster_quizbank) — 이 프로젝트 - 퀴즈 문제 은행
 - [jongsup-baek/class_svbasic](https://github.com/jongsup-baek/class_svbasic) — 반도체설계검증언어기초 (퀴즈 소비 레포)
 
+> **내 역할**: 퀴즈 관리 — class_ 교재를 읽고 문제 작성, YAML 등록, 난이도 관리. class_ 파일은 읽기만.
+> **병렬 워크플로우**: `../claeclassmaster/principles/workflow_roles.md` 참조
+
 ---
 
 ## 1. 프로젝트 개요
