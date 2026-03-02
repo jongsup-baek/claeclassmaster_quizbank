@@ -110,10 +110,12 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     has_image = bool(image_block)
     has_right = has_image or bool(code_block)
 
+    # 섹션 내 페이지네이션
+    pagination = f" ({section_idx}/{section_total})" if section_total > 1 else ""
+
     lines = [
-        "<!-- _class: quiz -->",
         "",
-        f"## [문제 {q_num}] {sec} {section_title}",
+        f"## [문제] 🔖 {sec} {section_title}{pagination}",
     ]
 
     # 2단 레이아웃: 이미지 또는 코드가 있으면 columns 시작
@@ -122,11 +124,11 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
 
     lines.extend([
         "",
-        f"문제 {q_num}. {q['question']}",
+        f"📌 문제 {q_num}. {q['question']}",
         "",
         render_choices(q["choices"]),
         "",
-        "문제를 풀어보세요",
+        "✍️ 문제를 풀어보세요",
     ])
 
     if has_right:
@@ -151,10 +153,12 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     # 해답 페이지는 이미지 없이 텍스트만 (문제 페이지에서 이미 봤으므로)
     has_code = bool(code_block)
 
+    # 섹션 내 페이지네이션
+    pagination = f" ({section_idx}/{section_total})" if section_total > 1 else ""
+
     lines = [
-        "<!-- _class: quiz -->",
         "",
-        f"## [해답 {q_num}] {sec} {section_title}",
+        f"## [해답] 🔖 {sec} {section_title}{pagination}",
     ]
 
     if has_code:
@@ -162,14 +166,14 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
 
     lines.extend([
         "",
-        f"문제 {q_num}. {q['question']}",
+        f"📌 문제 {q_num}. {q['question']}",
         "",
         render_choices(q["choices"]),
         "",
-        f"정답: {q['answer']}",
-        f"난이도: {q['difficulty']}",
+        f"✅ 정답: {q['answer']}",
+        f"⭐ 난이도: {q['difficulty']}",
         "",
-        "해설:",
+        "💡 해설:",
     ])
 
     for exp in q.get("explanation", []):
