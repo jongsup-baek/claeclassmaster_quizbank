@@ -122,11 +122,11 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
 
     lines.extend([
         "",
-        f"📌 문제 {q_num}. {q['question']}",
+        f"문제 {q_num}. {q['question']}",
         "",
         render_choices(q["choices"]),
         "",
-        "✍️ 문제를 풀어보세요",
+        "문제를 풀어보세요",
     ])
 
     if has_right:
@@ -162,14 +162,14 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
 
     lines.extend([
         "",
-        f"📌 문제 {q_num}. {q['question']}",
+        f"문제 {q_num}. {q['question']}",
         "",
         render_choices(q["choices"]),
         "",
-        f"✅ 정답: {q['answer']}",
-        f"⭐ 난이도: {q['difficulty']}",
+        f"정답: {q['answer']}",
+        f"난이도: {q['difficulty']}",
         "",
-        "💡 해설:",
+        "해설:",
     ])
 
     for exp in q.get("explanation", []):
