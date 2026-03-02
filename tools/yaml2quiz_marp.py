@@ -98,7 +98,7 @@ def render_image(q: dict, image_base: str | None) -> str:
         filename = Path(image_path).name
         image_path = f"{image_base}/{filename}"
     alt = q.get("image_alt", "")
-    return f"![{alt}]({image_path})"
+    return f"![bg right:40% w:700 {alt}]({image_path})"
 
 
 def render_question_page(q: dict, q_num: int, section_idx: int,
@@ -107,25 +107,44 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     title = q["section_title"]
     code_block = render_code_block(q)
     image_block = render_image(q, image_base)
+    has_right_panel = bool(image_block or code_block)
 
     lines = [
-        f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (문제)",
+        "<!-- _class: quiz -->",
         "",
-        f"📌 문제 {q_num}. {q['question']}",
+        f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (문제)",
     ]
 
-    if code_block:
-        lines.append(code_block)
-
+    # 이미지: Marp bg right 문법 (타이틀 바로 아래)
     if image_block:
         lines.extend(["", image_block])
 
+    # 코드: 2단 레이아웃 (왼쪽 문제+선택지, 오른쪽 코드)
+    if code_block and not image_block:
+        lines.extend([
+            "",
+            '<div class="columns"><div>',
+            "",
+        ])
+
     lines.extend([
+        "",
+        f"📌 문제 {q_num}. {q['question']}",
         "",
         render_choices(q["choices"]),
         "",
         "✍️ 문제를 풀어보세요",
     ])
+
+    if code_block and not image_block:
+        lines.extend([
+            "",
+            '</div><div>',
+            "",
+            code_block,
+            "",
+            '</div></div>',
+        ])
 
     return "\n".join(lines)
 
@@ -137,15 +156,22 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     code_block = render_code_block(q)
 
     lines = [
-        f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (해답)",
+        "<!-- _class: quiz -->",
         "",
-        f"📌 문제 {q_num}. {q['question']}",
+        f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (해답)",
     ]
 
+    # 코드: 2단 레이아웃
     if code_block:
-        lines.append(code_block)
+        lines.extend([
+            "",
+            '<div class="columns"><div>',
+            "",
+        ])
 
     lines.extend([
+        "",
+        f"📌 문제 {q_num}. {q['question']}",
         "",
         render_choices(q["choices"]),
         "",
@@ -157,6 +183,16 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
 
     for exp in q.get("explanation", []):
         lines.append(f"- {exp}")
+
+    if code_block:
+        lines.extend([
+            "",
+            '</div><div>',
+            "",
+            code_block,
+            "",
+            '</div></div>',
+        ])
 
     return "\n".join(lines)
 
