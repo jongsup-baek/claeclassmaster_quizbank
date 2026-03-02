@@ -112,7 +112,7 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     lines = [
         "<!-- _class: quiz -->",
         "",
-        f"## 🔖 {sec} Quiz ({section_idx}/{section_total}) (문제)",
+        f"## 🔖 {sec} Q{q_num}",
     ]
 
     # 2단 레이아웃: 이미지 또는 코드가 있으면 columns 시작
@@ -152,7 +152,7 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     lines = [
         "<!-- _class: quiz -->",
         "",
-        f"## 🔖 {sec} Quiz ({section_idx}/{section_total}) (해답)",
+        f"## 🔖 {sec} A{q_num}",
     ]
 
     if has_code:
