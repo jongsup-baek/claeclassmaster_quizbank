@@ -104,23 +104,20 @@ def render_image(q: dict, image_base: str | None) -> str:
 def render_question_page(q: dict, q_num: int, section_idx: int,
                          section_total: int, image_base: str | None) -> str:
     sec = q["section"]
-    title = q["section_title"]
     code_block = render_code_block(q)
     image_block = render_image(q, image_base)
-    has_right_panel = bool(image_block or code_block)
-
     has_image = bool(image_block)
     has_right = has_image or bool(code_block)
 
     lines = [
         "<!-- _class: quiz -->",
         "",
-        f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (문제)",
+        f"## 🔖 {sec} Quiz ({section_idx}/{section_total}) (문제)",
     ]
 
     # 2단 레이아웃: 이미지 또는 코드가 있으면 columns 시작
     if has_right:
-        lines.extend(["", '<div class="columns"><div>', ""])
+        lines.extend(["", '<div class="columns"><div>'])
 
     lines.extend([
         "",
@@ -148,20 +145,18 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
 def render_answer_page(q: dict, q_num: int, section_idx: int,
                        section_total: int, image_base: str | None) -> str:
     sec = q["section"]
-    title = q["section_title"]
     code_block = render_code_block(q)
-    image_block = render_image(q, image_base)
-    has_image = bool(image_block)
-    has_right = has_image or bool(code_block)
+    # 해답 페이지는 이미지 없이 텍스트만 (문제 페이지에서 이미 봤으므로)
+    has_code = bool(code_block)
 
     lines = [
         "<!-- _class: quiz -->",
         "",
-        f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (해답)",
+        f"## 🔖 {sec} Quiz ({section_idx}/{section_total}) (해답)",
     ]
 
-    if has_right:
-        lines.extend(["", '<div class="columns"><div>', ""])
+    if has_code:
+        lines.extend(["", '<div class="columns"><div>'])
 
     lines.extend([
         "",
@@ -178,13 +173,12 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     for exp in q.get("explanation", []):
         lines.append(f"- {exp}")
 
-    if has_right:
-        right_content = image_block if has_image else code_block
+    if has_code:
         lines.extend([
             "",
             '</div><div>',
             "",
-            right_content,
+            code_block,
             "",
             '</div></div>',
         ])
