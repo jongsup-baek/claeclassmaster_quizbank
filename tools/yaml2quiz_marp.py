@@ -98,7 +98,7 @@ def render_image(q: dict, image_base: str | None) -> str:
         filename = Path(image_path).name
         image_path = f"{image_base}/{filename}"
     alt = q.get("image_alt", "")
-    return f"![bg right:40% w:700 {alt}]({image_path})"
+    return f"![w:400 {alt}]({image_path})"
 
 
 def render_question_page(q: dict, q_num: int, section_idx: int,
@@ -109,23 +109,18 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     image_block = render_image(q, image_base)
     has_right_panel = bool(image_block or code_block)
 
+    has_image = bool(image_block)
+    has_right = has_image or bool(code_block)
+
     lines = [
         "<!-- _class: quiz -->",
         "",
         f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (문제)",
     ]
 
-    # 이미지: Marp bg right 문법 (타이틀 바로 아래)
-    if image_block:
-        lines.extend(["", image_block])
-
-    # 코드: 2단 레이아웃 (왼쪽 문제+선택지, 오른쪽 코드)
-    if code_block and not image_block:
-        lines.extend([
-            "",
-            '<div class="columns"><div>',
-            "",
-        ])
+    # 2단 레이아웃: 이미지 또는 코드가 있으면 columns 시작
+    if has_right:
+        lines.extend(["", '<div class="columns"><div>', ""])
 
     lines.extend([
         "",
@@ -136,12 +131,13 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
         "✍️ 문제를 풀어보세요",
     ])
 
-    if code_block and not image_block:
+    if has_right:
+        right_content = image_block if has_image else code_block
         lines.extend([
             "",
             '</div><div>',
             "",
-            code_block,
+            right_content,
             "",
             '</div></div>',
         ])
@@ -154,6 +150,9 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     sec = q["section"]
     title = q["section_title"]
     code_block = render_code_block(q)
+    image_block = render_image(q, image_base)
+    has_image = bool(image_block)
+    has_right = has_image or bool(code_block)
 
     lines = [
         "<!-- _class: quiz -->",
@@ -161,13 +160,8 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
         f"## Quiz 🔖 {sec} {title} ({section_idx}/{section_total}) (해답)",
     ]
 
-    # 코드: 2단 레이아웃
-    if code_block:
-        lines.extend([
-            "",
-            '<div class="columns"><div>',
-            "",
-        ])
+    if has_right:
+        lines.extend(["", '<div class="columns"><div>', ""])
 
     lines.extend([
         "",
@@ -184,12 +178,13 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     for exp in q.get("explanation", []):
         lines.append(f"- {exp}")
 
-    if code_block:
+    if has_right:
+        right_content = image_block if has_image else code_block
         lines.extend([
             "",
             '</div><div>',
             "",
-            code_block,
+            right_content,
             "",
             '</div></div>',
         ])
