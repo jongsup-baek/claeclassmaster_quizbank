@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_03_001
+  section: "3.1"
+  section_title: "컴퓨터 기술의 진화와 AI 시대"
+  type: mc
+  question: "제2세대 컴퓨터의 핵심 기술은?"
+  choices:
+    - "진공관"
+    - "트랜지스터"
+    - "IC칩"
+    - "마이크로프로세서"
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "1세대(진공관), 2세대(트랜지스터), 3세대(IC칩), 4세대(마이크로프로세서)로 구분된다"
+    - "트랜지스터의 등장으로 컴퓨터 크기가 줄고, 발열과 고장 문제가 개선되었다"
+    - "2세대에 FORTRAN, COBOL 등 프로그래밍 언어도 등장했다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_03_002
+  section: "3.2"
+  section_title: "무어의 법칙"
+  type: mc
+  question: "고든 무어가 1965년에 제안한 법칙은?"
+  choices:
+    - "옴의 법칙"
+    - "무어의 법칙"
+    - "쿨롱의 법칙"
+    - "패러데이의 법칙"
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "무어의 법칙은 반도체 칩의 트랜지스터 수가 약 2년마다 2배씩 증가한다는 관찰이다"
+    - "물리 법칙이 아니라 산업계의 경험적 관찰이자 목표였다"
+    - "이 법칙에 따라 50년간 집적도가 수백만 배 증가했다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_03_003
+  section: "3.2"
+  section_title: "무어의 법칙"
+  type: fill_blank
+  question: "인텔의 공동 창업자 고든 (___) 는 트랜지스터 수가 약 2년마다 2배 증가한다고 제안했다."
+  answer: "무어"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "고든 무어(Gordon Moore)는 인텔의 공동 설립자이다"
+    - "1965년에 반도체 칩의 트랜지스터 수가 일정 주기로 2배씩 증가한다고 관찰했다"
+    - "이 관찰은 반도체 업계가 기술 발전 목표로 삼아 실현해온 자기 실현적 예언이기도 하다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_03_004
+  section: "3.1"
+  section_title: "컴퓨터 기술의 진화와 AI 시대"
+  type: fill_blank
+  question: "제4세대 컴퓨터 혁명은 (___) 의 발명으로 시작되었다."
+  answer: "마이크로프로세서"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "1971년 인텔이 세계 최초의 상용 마이크로프로세서 4004를 출시했다"
+    - "CPU 전체를 하나의 칩에 담을 수 있게 되면서 개인용 컴퓨터(PC)가 등장했다"
+    - "이후 인터넷, 스마트폰으로 이어지는 디지털 혁명이 가속화되었다"
+  created: 2026-03-02

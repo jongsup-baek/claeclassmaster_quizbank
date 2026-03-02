@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_08_001
+  section: "8.1"
+  section_title: "CUDA의 역사"
+  type: mc
+  question: "CUDA를 발표한 회사와 연도는?"
+  choices:
+    - "Intel, 2004년"
+    - "NVIDIA, 2006년"
+    - "AMD, 2008년"
+    - "Google, 2010년"
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "CUDA(Compute Unified Device Architecture)는 NVIDIA가 2006년에 발표한 GPU 프로그래밍 플랫폼이다"
+    - "CUDA를 통해 GPU를 그래픽 처리뿐 아니라 범용 연산(GPGPU)에 활용할 수 있게 되었다"
+    - "이 CUDA 생태계가 NVIDIA의 AI 시장 지배력의 핵심 원천이다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_08_002
+  section: "8.2"
+  section_title: "GPT의 발전"
+  type: mc
+  question: "GPT-3가 세상에 큰 반향을 일으킨 해는?"
+  choices:
+    - "2018"
+    - "2019"
+    - "2020"
+    - "2022"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "GPT-3는 2020년에 공개되어 1750억 개의 파라미터로 놀라운 언어 생성 능력을 보여주었다"
+    - "GPT-1(2018), GPT-2(2019), GPT-3(2020), GPT-4(2023) 순으로 발전했다"
+    - "ChatGPT(2022년 11월)의 폭발적 인기로 AI가 대중화되었다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_08_003
+  section: "8.1"
+  section_title: "CUDA의 역사"
+  type: fill_blank
+  question: "CUDA는 GPU를 (___) 할 수 있는 (___) 이다."
+  answer: "범용 프로그래밍 / 소프트웨어 플랫폼"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "CUDA 이전에 GPU는 그래픽 처리에만 사용되었으나, CUDA로 범용 연산이 가능해졌다"
+    - "소프트웨어 플랫폼으로서 개발자 도구, 라이브러리, 프레임워크를 포함한다"
+    - "10년 이상 축적된 CUDA 기반 코드가 NVIDIA의 락인 효과를 만든다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_08_004
+  section: "8.2"
+  section_title: "GPT의 발전"
+  type: fill_blank
+  question: "GPT-4o는 (___) 대화를 지원한다."
+  answer: "실시간 멀티모달"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "GPT-4o의 'o'는 omni(모든)를 의미하며, 텍스트·음성·이미지를 동시에 처리한다"
+    - "실시간으로 음성 대화가 가능하고, 이미지를 보면서 설명할 수 있다"
+    - "이전 모델들이 텍스트 중심이었던 것과 달리, 멀티모달 AI로의 전환점이 되었다"
+  created: 2026-03-02

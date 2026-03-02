@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_02_001
+  section: "2.1"
+  section_title: "반도체는 어떻게 발전되어 왔을까"
+  type: mc
+  question: "Apple M3 칩(2023)의 트랜지스터 개수는?"
+  choices:
+    - "160억 개"
+    - "200억 개"
+    - "250억 개 이상"
+    - "800억 개"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "Apple M3는 약 250억 개의 트랜지스터를 집적하고 있다"
+    - "M1(160억), M2(200억), M3(250억)으로 세대마다 집적도가 증가했다"
+    - "NVIDIA H100(800억)이나 B200(2,000억)은 AI용 GPU로 훨씬 높은 집적도를 가진다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_02_002
+  section: "2.1"
+  section_title: "반도체는 어떻게 발전되어 왔을까"
+  type: mc
+  question: "반도체 집적도는 50년 동안 약 몇 배 증가했는가?"
+  choices:
+    - "1천 배"
+    - "1만 배"
+    - "10만 배"
+    - "100만 배 이상"
+  answer: 4
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "지난 50년간 반도체 집적도는 약 1백만 배 증가했다"
+    - "이는 공정 노드가 10um에서 3nm까지 미세화된 결과이다"
+    - "무어의 법칙(2년마다 2배)이 약 50년간 누적되면 천문학적 증가가 된다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_02_003
+  section: "2.2"
+  section_title: "완성된 반도체 단면"
+  type: fill_blank
+  question: "FEOL은 (___) 가 만들어지는 부분이며, 소스, 드레인, 게이트를 포함한다."
+  answer: "트랜지스터"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "FEOL(Front End of Line)은 칩의 가장 아래쪽에서 트랜지스터를 형성하는 공정이다"
+    - "소스, 드레인, 게이트는 트랜지스터의 3대 구성요소이다"
+    - "BEOL(Back End of Line)은 트랜지스터 위의 금속 배선 영역으로 구별된다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_02_004
+  section: "2.5"
+  section_title: "파운드리 사업"
+  type: fill_blank
+  question: "모리스 창이 창업한 회사는 (___) 이며, 철학은 \"고객과 경쟁하지 않는다\"이다."
+  answer: "TSMC"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "TSMC(Taiwan Semiconductor Manufacturing Company)는 1987년 모리스 창이 창업한 세계 최대 파운드리이다"
+    - "\"고객과 경쟁하지 않는다\"는 원칙으로 팹리스 기업들의 신뢰를 얻었다"
+    - "Apple, NVIDIA, AMD, Qualcomm 등 주요 팹리스 기업이 모두 TSMC에 생산을 위탁한다"
+  created: 2026-03-02

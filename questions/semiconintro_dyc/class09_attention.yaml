@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_09_001
+  section: "9.1"
+  section_title: "트랜스포머"
+  type: mc
+  question: "트랜스포머 논문 제목은?"
+  choices:
+    - "Attention is All You Need"
+    - "Deep Learning Revolution"
+    - "The Neural Network Bible"
+    - "Computing Machinery and Intelligence"
+  answer: 1
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "\"Attention is All You Need\"는 2017년 Google 연구팀이 발표한 트랜스포머 논문의 제목이다"
+    - "이 논문은 기존 RNN/LSTM을 대체하는 어텐션 기반 아키텍처를 제안했다"
+    - "GPT, BERT, 번역, 이미지 생성 등 현대 AI의 핵심 기반 기술이 되었다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_09_002
+  section: "9.2"
+  section_title: "어텐션 메커니즘"
+  type: mc
+  question: "어텐션 메커니즘의 핵심은?"
+  choices:
+    - "모든 단어를 동일하게 처리"
+    - "중요 단어에 집중"
+    - "순서대로 처리"
+    - "단어를 무작위로 선택"
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "어텐션은 입력 시퀀스에서 현재 처리 중인 부분과 관련성이 높은 단어에 더 높은 가중치를 부여한다"
+    - "이를 통해 문맥을 더 정확하게 파악하고, 긴 문장에서도 핵심 정보를 놓치지 않는다"
+    - "기존 RNN 방식은 순서대로 처리하여 긴 문장에서 정보 손실이 발생했다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_09_003
+  section: "9.2"
+  section_title: "어텐션 메커니즘"
+  type: fill_blank
+  question: "어텐션은 단어 간 (___) 를 계산하고, 중요한 단어에 (___) 한다."
+  answer: "관계 / 집중"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "어텐션 메커니즘은 Query, Key, Value를 사용하여 단어 간 관계(유사도)를 계산한다"
+    - "유사도가 높은 단어에 더 높은 가중치(집중)를 부여하여 문맥을 반영한다"
+    - "이 과정이 행렬곱으로 이루어지므로 GPU의 병렬 처리와 잘 맞는다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_09_004
+  section: "9.1"
+  section_title: "트랜스포머"
+  type: fill_blank
+  question: "인코더는 입력 문장의 전체 (___) 를 요약하고, 디코더는 이를 참고해 (___) 를 생성한다."
+  answer: "의미 / 단어"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "인코더는 입력 문장의 전체 의미를 벡터로 요약(인코딩)한다"
+    - "디코더는 인코더의 출력을 참고하면서 한 단어씩 결과를 생성(디코딩)한다"
+    - "번역의 경우, 인코더가 원문의 의미를 파악하고 디코더가 번역문을 단어 단위로 생성한다"
+  created: 2026-03-02

@@ -26,8 +26,8 @@ COURSE_META = {
         "professor": "백종섭 교수",
     },
     "semiconintro_dyc": {
-        "course_name": "반도체개론",
-        "university": "건양대학교 국방반도체공학과",
+        "course_name": "반도체와 AI",
+        "university": "건양대학교 반도체공학과",
         "professor": "백종섭 교수",
     },
 }
@@ -37,6 +37,17 @@ LECTURE_TITLES = {
     "svbasic": {
         "02": "기본 데이터 타입과 리터럴",
         "03": "절차문과 절차 블록",
+    },
+    "semiconintro_dyc": {
+        "01": "반도체가 무엇인지 알아보기",
+        "02": "반도체가 어떻게 만들어지는지 알아보기",
+        "03": "컴퓨터가 어떻게 발전해왔는지 알아보기",
+        "04": "빅테크 기업들이 왜 반도체에 투자하는지 알아보기",
+        "05": "AI 반도체",
+        "06": "뉴런과 AI",
+        "07": "퍼셉트론",
+        "08": "CUDA에서 GPT까지",
+        "09": "어텐션 메커니즘",
     },
 }
 
@@ -122,11 +133,20 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     if has_right:
         lines.extend(["", '<div class="columns"><div>'])
 
+    is_fill_blank = q.get("type") == "fill_blank"
+
     lines.extend([
         "",
         f"📌 문제 {q_num}. {q['question']}",
-        "",
-        render_choices(q["choices"]),
+    ])
+
+    if not is_fill_blank:
+        lines.extend([
+            "",
+            render_choices(q["choices"]),
+        ])
+
+    lines.extend([
         "",
         "✍️ 문제를 풀어보세요",
     ])
@@ -164,11 +184,20 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     if has_code:
         lines.extend(["", '<div class="columns"><div>'])
 
+    is_fill_blank = q.get("type") == "fill_blank"
+
     lines.extend([
         "",
         f"📌 문제 {q_num}. {q['question']}",
-        "",
-        render_choices(q["choices"]),
+    ])
+
+    if not is_fill_blank:
+        lines.extend([
+            "",
+            render_choices(q["choices"]),
+        ])
+
+    lines.extend([
         "",
         f"✅ 정답: {q['answer']}",
         f"⭐ 난이도: {q['difficulty']}",

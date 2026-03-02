@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_07_001
+  section: "7.1"
+  section_title: "퍼셉트론의 기원"
+  type: mc
+  question: "퍼셉트론을 처음 제안한 학자는?"
+  choices:
+    - "앨런 튜링"
+    - "폰 노이만"
+    - "McCulloch & Pitts"
+    - "제프리 힌턴"
+  answer: 3
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "McCulloch와 Pitts는 1943년에 뉴런의 수학적 모델을 처음 제안했다"
+    - "이후 1957년 Frank Rosenblatt가 이를 발전시켜 퍼셉트론 알고리즘을 구현했다"
+    - "제프리 힌턴은 역전파 알고리즘과 딥러닝의 선구자이다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_07_002
+  section: "7.2"
+  section_title: "XOR 문제와 MLP"
+  type: mc
+  question: "단일 퍼셉트론이 해결하지 못하는 문제는?"
+  choices:
+    - "AND"
+    - "OR"
+    - "NOT"
+    - "XOR"
+  answer: 4
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "단일 퍼셉트론은 선형으로 분리 가능한 문제(AND, OR, NOT)만 해결할 수 있다"
+    - "XOR은 비선형 문제로, 하나의 직선으로 분류할 수 없다"
+    - "이 한계를 극복하기 위해 다층 퍼셉트론(MLP)과 역전파 알고리즘이 개발되었다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_07_003
+  section: "7.1"
+  section_title: "퍼셉트론의 기원"
+  type: fill_blank
+  question: "(___) 의 수학적 표현은 Σ(wᵢ·xᵢ) + b 이다."
+  answer: "퍼셉트론"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "퍼셉트론은 입력(xᵢ)에 가중치(wᵢ)를 곱하고 합산한 뒤 편향(b)을 더한다"
+    - "이 결과를 활성화 함수에 통과시켜 출력을 결정한다"
+    - "이 수식이 인공 신경망의 가장 기본적인 연산 단위이다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_07_004
+  section: "7.3"
+  section_title: "딥러닝의 역사"
+  type: fill_blank
+  question: "1986년 (___) 이 발표되면서 신경망 학습이 본격적으로 가능해졌다."
+  answer: "역전파 알고리즘"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "역전파(Backpropagation) 알고리즘은 출력의 오차를 역방향으로 전파하여 가중치를 조정하는 방법이다"
+    - "1986년 Rumelhart, Hinton, Williams가 발표하여 다층 신경망 학습이 가능해졌다"
+    - "이 알고리즘은 오늘날 딥러닝의 기초가 되는 핵심 기술이다"
+  created: 2026-03-02

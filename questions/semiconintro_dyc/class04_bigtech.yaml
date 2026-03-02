@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_04_001
+  section: "4.4"
+  section_title: "AI 반도체 생태계의 경쟁과 협력"
+  type: mc
+  question: "2025년 기준 AI GPU 시장 점유율 80%를 가진 기업은?"
+  choices:
+    - "Intel"
+    - "AMD"
+    - "NVIDIA"
+    - "Google"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "NVIDIA는 데이터센터용 AI GPU 시장 점유율 약 80%를 차지하고 있다"
+    - "CUDA 소프트웨어 생태계를 통해 개발자들을 강력하게 묶어두는 락인 효과가 핵심 경쟁력이다"
+    - "Google(TPU), Amazon(Trainium), Meta(MTIA) 등이 도전하고 있으나 아직 격차가 크다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_04_002
+  section: "4.2"
+  section_title: "빅테크 기업들의 반도체 독립 전략"
+  type: mc
+  question: "Google의 AI 전용 칩 이름은?"
+  choices:
+    - "TPU"
+    - "Graviton"
+    - "Trainium"
+    - "MTIA"
+  answer: 1
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "TPU(Tensor Processing Unit)는 Google이 자체 설계한 AI 전용 칩이다"
+    - "Graviton은 Amazon의 CPU, Trainium은 Amazon의 AI 학습용 칩, MTIA는 Meta의 AI 칩이다"
+    - "Google은 TPU를 검색, 번역, Gemini 등 자사 AI 서비스에 활용한다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_04_003
+  section: "4.2"
+  section_title: "빅테크 기업들의 반도체 독립 전략"
+  type: fill_blank
+  question: "Meta는 자체 AI 가속기 MTIA를 개발하고 있으며, (___) 는 Broadcom과 협력 중이다."
+  answer: "OpenAI"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "OpenAI는 Broadcom과 협력하여 자체 AI 칩 설계를 추진하고 있다"
+    - "Meta의 MTIA(Meta Training and Inference Accelerator)는 추천 알고리즘에 최적화된 칩이다"
+    - "빅테크 기업들이 NVIDIA 의존도를 줄이기 위해 각자 칩 개발에 나서고 있다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_04_004
+  section: "4.3"
+  section_title: "자율주행차를 구성하는 반도체"
+  type: fill_blank
+  question: "자율주행차에는 NPU, GPU, CPU 같은 (___) 과 센서 퓨전 프로세서가 포함된다."
+  answer: "처리 유닛"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "자율주행차의 처리 유닛은 NPU(AI 연산), GPU(영상 병렬처리), CPU(시스템 제어)로 구성된다"
+    - "이들은 ADAS SoC에 통합되어 하나의 칩으로 탑재되기도 한다"
+    - "NVIDIA DRIVE, Tesla FSD, Mobileye EyeQ 등이 대표적인 자율주행 반도체 플랫폼이다"
+  created: 2026-03-02

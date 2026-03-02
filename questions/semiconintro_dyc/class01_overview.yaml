@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_01_001
+  section: "1.1"
+  section_title: "반도체란 무엇인가"
+  type: mc
+  question: "반도체가 도체와 부도체의 중간 성질을 가진 이유는?"
+  choices:
+    - "전기가 항상 흐르기 때문"
+    - "전기가 항상 차단되기 때문"
+    - "특정 조건에서 전류가 흐르거나 차단되기 때문"
+    - "전류가 반만 흐르기 때문"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "반도체는 온도, 빛, 불순물 주입 등 특정 조건에 따라 전기가 흐르기도 하고 흐르지 않기도 한다"
+    - "이 조절 가능한 성질 덕분에 전자 스위치 역할이 가능하며, 컴퓨터의 0과 1을 표현할 수 있다"
+    - "도체(항상 흐름)와 부도체(항상 차단)의 사이에서 제어할 수 있다는 점이 핵심이다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_01_002
+  section: "1.2"
+  section_title: "반도체 물질의 특성과 기능"
+  type: mc
+  question: "실리콘의 원자번호와 최외각 전자 수는?"
+  choices:
+    - "12번, 2개"
+    - "14번, 4개"
+    - "16번, 6개"
+    - "28번, 4개"
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "실리콘은 원자번호 14, 최외각 전자 수 4개인 원소이다"
+    - "최외각 전자 4개가 공유결합을 형성하며, 이것이 도핑(불순물 주입)의 기초가 된다"
+    - "28.068 amu는 질량수이지 원자번호가 아니므로 혼동하지 않도록 주의한다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_01_003
+  section: "1.2"
+  section_title: "반도체 물질의 특성과 기능"
+  type: fill_blank
+  question: "실리콘은 지각 무게의 약 28%를 차지하며, (___) 다음으로 풍부한 원소이다."
+  answer: "산소"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "산소는 지각 무게의 약 46%를 차지하며 가장 풍부한 원소이다"
+    - "실리콘은 약 28%로 두 번째로 풍부하여 반도체 재료로 경제적이다"
+    - "실리콘밸리라는 이름도 이 실리콘에서 유래했다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_01_004
+  section: "1.4"
+  section_title: "다이오드와 트랜지스터"
+  type: fill_blank
+  question: "반도체 소자인 (___) 는 전류를 한 방향으로만 흐르게 한다."
+  answer: "다이오드"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "다이오드는 p형과 n형 반도체를 접합한 소자로, 전류를 한 방향으로만 통과시킨다"
+    - "정류(AC→DC 변환)와 전원 보호 역할을 수행한다"
+    - "트랜지스터는 전류를 제어·증폭·스위칭하는 소자로, 다이오드와 구별해야 한다"
+  created: 2026-03-02

@@ -1,0 +1,69 @@
+- id: semiconintro_dyc_05_001
+  section: "5.1"
+  section_title: "AI 반도체의 필요성"
+  type: mc
+  question: "AI 반도체가 필요한 가장 큰 이유는?"
+  choices:
+    - "기존 CPU가 너무 비싸서"
+    - "전력 소비를 줄이기 위해"
+    - "막대한 연산량 처리"
+    - "컴퓨터 크기를 줄이기 위해"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "AI 모델(특히 딥러닝)은 행렬곱 등 막대한 양의 연산을 필요로 한다"
+    - "기존 CPU는 순차 처리 방식이라 대규모 병렬 연산에 한계가 있다"
+    - "GPU, TPU, NPU 등 AI 반도체는 수천 개의 코어로 병렬 연산을 처리하여 학습과 추론 속도를 높인다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_05_002
+  section: "5.2"
+  section_title: "AI 반도체의 활용"
+  type: mc
+  question: "구글의 AI 반도체는 무엇인가?"
+  choices:
+    - "GPU"
+    - "NPU"
+    - "TPU"
+    - "CPU"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "TPU(Tensor Processing Unit)는 Google이 자체 설계한 AI 전용 반도체이다"
+    - "텐서(다차원 행렬) 연산에 최적화되어 딥러닝 학습과 추론에 특화되어 있다"
+    - "GPU는 NVIDIA, NPU는 스마트폰/엣지 기기용 AI 칩으로 각각 다른 용도이다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_05_003
+  section: "5.3"
+  section_title: "폰 노이만 구조와 CPU 한계"
+  type: fill_blank
+  question: "폰 노이만 구조의 한계는 (___) 때문이다."
+  answer: "메모리 병목 현상"
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "폰 노이만 구조에서는 CPU와 메모리 사이에 데이터를 주고받는 통로가 병목이 된다"
+    - "연산 속도는 빨라져도 메모리 접근 속도가 따라가지 못하는 폰 노이만 병목이 발생한다"
+    - "이를 해결하기 위해 PIM(Processing-in-Memory), 뉴로모픽 칩 등 새로운 아키텍처가 연구되고 있다"
+  created: 2026-03-02
+
+- id: semiconintro_dyc_05_004
+  section: "5.4"
+  section_title: "GPU 병렬처리"
+  type: fill_blank
+  question: "GPU는 수천 개의 연산 코어로 AI 연산에 최적화되어 CPU보다 훨씬 빠른 (___) 속도를 제공한다."
+  answer: "학습 및 추론"
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "GPU는 수천 개의 코어로 행렬곱 같은 단순 연산을 동시에 대량 처리한다"
+    - "AI 학습(Training)은 모델의 가중치를 조정하는 과정, 추론(Inference)은 학습된 모델로 결과를 내는 과정이다"
+    - "NVIDIA의 H100, B200 등이 AI 학습과 추론 모두에서 압도적 성능을 보인다"
+  created: 2026-03-02
