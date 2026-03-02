@@ -104,6 +104,7 @@ def render_image(q: dict, image_base: str | None) -> str:
 def render_question_page(q: dict, q_num: int, section_idx: int,
                          section_total: int, image_base: str | None) -> str:
     sec = q["section"]
+    section_title = q["section_title"]
     code_block = render_code_block(q)
     image_block = render_image(q, image_base)
     has_image = bool(image_block)
@@ -112,7 +113,7 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     lines = [
         "<!-- _class: quiz -->",
         "",
-        f"## 🔖 {sec} Q{q_num}",
+        f"## [문제 {q_num}] {sec} {section_title}",
     ]
 
     # 2단 레이아웃: 이미지 또는 코드가 있으면 columns 시작
@@ -145,6 +146,7 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
 def render_answer_page(q: dict, q_num: int, section_idx: int,
                        section_total: int, image_base: str | None) -> str:
     sec = q["section"]
+    section_title = q["section_title"]
     code_block = render_code_block(q)
     # 해답 페이지는 이미지 없이 텍스트만 (문제 페이지에서 이미 봤으므로)
     has_code = bool(code_block)
@@ -152,7 +154,7 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     lines = [
         "<!-- _class: quiz -->",
         "",
-        f"## 🔖 {sec} A{q_num}",
+        f"## [해답 {q_num}] {sec} {section_title}",
     ]
 
     if has_code:
