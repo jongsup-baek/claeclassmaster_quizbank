@@ -5,8 +5,8 @@ Usage:
     python yaml2quiz_marp.py <yaml_file> [--output <output_file>] [--image-base <path>]
 
 출력 파일명 규칙:
-    --output 미지정 시 자동 생성: classNN_topic_marp_Q.md
-    (정렬: notes.md → lecture_marp.md → quiz_marp_Q.md 순서 보장)
+    --output 미지정 시 자동 생성: classNN_topic_quiz.md
+    (정렬: _content.md → _marp.md → _quiz.md 순서 보장)
 
 Examples:
     python yaml2quiz_marp.py questions/svbasic/class03_procedural.yaml
@@ -296,10 +296,10 @@ def convert(yaml_path: Path, image_base: str | None = None) -> str:
 def auto_output_name(yaml_path: Path) -> str:
     """YAML 파일명 → Marp 출력 파일명 자동 생성.
 
-    classNN_topic.yaml → classNN_topic_marp_Q.md
+    classNN_topic.yaml → classNN_topic_quiz.md
     """
     stem = yaml_path.stem  # e.g. "class03_procedural"
-    return f"{stem}_marp_Q.md"
+    return f"{stem}_quiz.md"
 
 
 def main():
