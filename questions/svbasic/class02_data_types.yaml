@@ -10,6 +10,12 @@
   answer: 2
   difficulty: 하
   has_code: false
+  has_image: true
+  image:
+    path: "./images/class02_2_3.drawio.svg"
+    w: 800
+    layout: full
+  image_alt: "SystemVerilog 데이터 타입 분류 계층도"
   explanation:
   - SystemVerilog의 데이터 타입은 표현 가능한 값의 수에 따라 2-state와 4-state로 나뉜다.
   - 2-state 타입(bit, byte, shortint, int, longint)은 0과 1만 표현할 수 있어 시뮬레이션 속도가 빠르지만,
@@ -84,6 +90,12 @@
   answer: 4
   difficulty: 하
   has_code: false
+  has_image: true
+  image:
+    path: "./images/class02_2_5_init.drawio.svg"
+    w: 400
+    layout: side
+  image_alt: "bit(2-state)은 0으로, logic(4-state)은 X로 초기화되는 비교 다이어그램"
   explanation:
   - 4-state 변수(logic, reg, integer 등)는 시뮬레이션 시작 시 X(unknown)로 자동 초기화된다.
   - 이는 설계자가 초기화되지 않은 신호를 시뮬레이션 파형에서 쉽게 식별할 수 있도록 하기 위함이다.
@@ -153,6 +165,12 @@
   answer: 3
   difficulty: 중
   has_code: false
+  has_image: true
+  image:
+    path: "./images/class02_2_7.drawio.svg"
+    w: 500
+    layout: side
+  image_alt: "Verilog wire/reg 구분 vs SystemVerilog logic 통합 비교 다이어그램"
   explanation:
   - logic 변수는 단일 드라이버(single driver)만 허용하는 것이 핵심 제약 조건이다.
   - procedural block, 단일 assign 문, 단일 모듈 출력 연결은 모두 단일 드라이버이므로 허용된다.
@@ -264,6 +282,12 @@
   answer: 3
   difficulty: 중
   has_code: false
+  has_image: true
+  image:
+    path: "./images/class02_2_10.drawio.svg"
+    w: 800
+    layout: side
+  image_alt: "단일 드라이버 vs 다중 드라이버 연결 비교 다이어그램"
   explanation:
   - logic 변수는 단일 드라이버만 허용하므로, 두 개의 모듈 출력을 동시에 연결하면 다중 드라이버 에러가 발생한다.
   - 이는 경고가 아닌 컴파일 에러로 처리되어, 시뮬레이션 실행 전에 문제를 발견할 수 있다.
@@ -334,6 +358,12 @@
   answer: 2
   difficulty: 중
   has_code: false
+  has_image: true
+  image:
+    path: "./images/class02_2_12_sv.drawio.svg"
+    w: 400
+    layout: side
+  image_alt: "SystemVerilog 비지정 리터럴('1)의 전체 비트 채움 동작 다이어그램"
   explanation:
   - SystemVerilog의 비지정 리터럴(unsized literal) '1은 대상 변수의 전체 비트를 지정한 값으로 채운다.
   - 6비트 변수에 '1을 할당하면 모든 비트가 1로 채워져 6'b111111(= 6'h3F)이 된다.
@@ -456,6 +486,12 @@
   answer: 3
   difficulty: 중
   has_code: false
+  has_image: true
+  image:
+    path: "./images/class02_2_15.drawio.svg"
+    w: 400
+    layout: side
+  image_alt: "Time unit resolution 우선순위 계층 다이어그램"
   explanation:
   - Time unit resolution에서 모듈 내부의 timeunit 선언이 가장 높은 우선순위를 가진다.
   - '우선순위 순서는: timeunit(모듈 내부) > 상위 모듈 상속 > 컴파일 유닛의 \`timescale > 시뮬레이터 기본값이다.'
