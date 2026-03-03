@@ -133,20 +133,11 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     if has_right:
         lines.extend(["", '<div class="columns"><div>'])
 
-    is_fill_blank = q.get("type") == "fill_blank"
-
     lines.extend([
         "",
         f"📌 문제 {q_num}. {q['question']}",
-    ])
-
-    if not is_fill_blank:
-        lines.extend([
-            "",
-            render_choices(q["choices"]),
-        ])
-
-    lines.extend([
+        "",
+        render_choices(q["choices"]),
         "",
         "✍️ 문제를 풀어보세요",
     ])
@@ -184,20 +175,11 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     if has_code:
         lines.extend(["", '<div class="columns"><div>'])
 
-    is_fill_blank = q.get("type") == "fill_blank"
-
     lines.extend([
         "",
         f"📌 문제 {q_num}. {q['question']}",
-    ])
-
-    if not is_fill_blank:
-        lines.extend([
-            "",
-            render_choices(q["choices"]),
-        ])
-
-    lines.extend([
+        "",
+        render_choices(q["choices"]),
         "",
         f"✅ 정답: {q['answer']}",
         f"⭐ 난이도: {q['difficulty']}",
@@ -259,6 +241,26 @@ def render_title_page(subject: str, class_num: str) -> str:
     return "\n".join(lines)
 
 
+def render_thank_you_page(sections: OrderedDict) -> str:
+    """Thank You 페이지 렌더링 (claeclassmaster #15 표준)."""
+    lines = [
+        "<!-- _class: end -->",
+        '<!-- _header: "" -->',
+        '<!-- _footer: "" -->',
+        "<!-- _paginate: false -->",
+        "",
+        "# Thank You",
+    ]
+    # 섹션 목록 나열
+    seen = set()
+    for sec, sec_questions in sections.items():
+        if sec not in seen:
+            seen.add(sec)
+            title = sec_questions[0]["section_title"]
+            lines.append(f"🔖 {sec} {title}")
+    return "\n".join(lines)
+
+
 def convert(yaml_path: Path, image_base: str | None = None) -> str:
     questions = load_yaml(yaml_path)
     info = parse_file_info(yaml_path)
@@ -285,7 +287,7 @@ def convert(yaml_path: Path, image_base: str | None = None) -> str:
                 q, q_num, section_idx, section_total, image_base))
 
     # Thank You 페이지
-    slides.append("## Thank You")
+    slides.append(render_thank_you_page(sections))
 
     return frontmatter + "\n\n" + "\n\n---\n\n".join(slides) + "\n"
 

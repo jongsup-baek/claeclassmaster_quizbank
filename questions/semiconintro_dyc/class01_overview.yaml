@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_01_001
   section: "1.1"
   section_title: "반도체란 무엇인가"
-  type: mc
   question: "반도체가 도체와 부도체의 중간 성질을 가진 이유는?"
   choices:
     - "전기가 항상 흐르기 때문"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_01_002
   section: "1.2"
   section_title: "반도체 물질의 특성과 기능"
-  type: mc
   question: "실리콘의 원자번호와 최외각 전자 수는?"
   choices:
     - "12번, 2개"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_01_003
   section: "1.2"
   section_title: "반도체 물질의 특성과 기능"
-  type: fill_blank
   question: "실리콘은 지각 무게의 약 28%를 차지하며, (___) 다음으로 풍부한 원소이다."
-  answer: "산소"
+  choices:
+    - "질소"
+    - "탄소"
+    - "산소"
+    - "수소"
+  answer: 3
   difficulty: 하
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_01_004
   section: "1.4"
   section_title: "다이오드와 트랜지스터"
-  type: fill_blank
   question: "반도체 소자인 (___) 는 전류를 한 방향으로만 흐르게 한다."
-  answer: "다이오드"
+  choices:
+    - "트랜지스터"
+    - "다이오드"
+    - "저항"
+    - "커패시터"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false

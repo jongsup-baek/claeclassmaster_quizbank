@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_07_001
   section: "7.1"
   section_title: "퍼셉트론의 기원"
-  type: mc
   question: "퍼셉트론을 처음 제안한 학자는?"
   choices:
     - "앨런 튜링"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_07_002
   section: "7.2"
   section_title: "XOR 문제와 MLP"
-  type: mc
   question: "단일 퍼셉트론이 해결하지 못하는 문제는?"
   choices:
     - "AND"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_07_003
   section: "7.1"
   section_title: "퍼셉트론의 기원"
-  type: fill_blank
   question: "(___) 의 수학적 표현은 Σ(wᵢ·xᵢ) + b 이다."
-  answer: "퍼셉트론"
+  choices:
+    - "시냅스"
+    - "활성화 함수"
+    - "퍼셉트론"
+    - "손실 함수"
+  answer: 3
   difficulty: 중
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_07_004
   section: "7.3"
   section_title: "딥러닝의 역사"
-  type: fill_blank
   question: "1986년 (___) 이 발표되면서 신경망 학습이 본격적으로 가능해졌다."
-  answer: "역전파 알고리즘"
+  choices:
+    - "합성곱 신경망"
+    - "순환 신경망"
+    - "역전파 알고리즘"
+    - "강화 학습"
+  answer: 3
   difficulty: 중
   has_code: false
   has_image: false

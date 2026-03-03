@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_08_001
   section: "8.1"
   section_title: "CUDA의 역사"
-  type: mc
   question: "CUDA를 발표한 회사와 연도는?"
   choices:
     - "Intel, 2004년"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_08_002
   section: "8.2"
   section_title: "GPT의 발전"
-  type: mc
   question: "GPT-3가 세상에 큰 반향을 일으킨 해는?"
   choices:
     - "2018"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_08_003
   section: "8.1"
   section_title: "CUDA의 역사"
-  type: fill_blank
   question: "CUDA는 GPU를 (___) 할 수 있는 (___) 이다."
-  answer: "범용 프로그래밍 / 소프트웨어 플랫폼"
+  choices:
+    - "그래픽 렌더링 / 하드웨어 장치"
+    - "범용 프로그래밍 / 소프트웨어 플랫폼"
+    - "데이터 저장 / 운영체제"
+    - "네트워크 처리 / 프로토콜"
+  answer: 2
   difficulty: 중
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_08_004
   section: "8.2"
   section_title: "GPT의 발전"
-  type: fill_blank
   question: "GPT-4o는 (___) 대화를 지원한다."
-  answer: "실시간 멀티모달"
+  choices:
+    - "텍스트 전용"
+    - "오프라인 배치"
+    - "실시간 멀티모달"
+    - "단방향 음성"
+  answer: 3
   difficulty: 중
   has_code: false
   has_image: false

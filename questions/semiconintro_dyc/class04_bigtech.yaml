@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_04_001
   section: "4.4"
   section_title: "AI 반도체 생태계의 경쟁과 협력"
-  type: mc
   question: "2025년 기준 AI GPU 시장 점유율 80%를 가진 기업은?"
   choices:
     - "Intel"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_04_002
   section: "4.2"
   section_title: "빅테크 기업들의 반도체 독립 전략"
-  type: mc
   question: "Google의 AI 전용 칩 이름은?"
   choices:
     - "TPU"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_04_003
   section: "4.2"
   section_title: "빅테크 기업들의 반도체 독립 전략"
-  type: fill_blank
   question: "Meta는 자체 AI 가속기 MTIA를 개발하고 있으며, (___) 는 Broadcom과 협력 중이다."
-  answer: "OpenAI"
+  choices:
+    - "Google"
+    - "Microsoft"
+    - "OpenAI"
+    - "Apple"
+  answer: 3
   difficulty: 중
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_04_004
   section: "4.3"
   section_title: "자율주행차를 구성하는 반도체"
-  type: fill_blank
   question: "자율주행차에는 NPU, GPU, CPU 같은 (___) 과 센서 퓨전 프로세서가 포함된다."
-  answer: "처리 유닛"
+  choices:
+    - "메모리 칩"
+    - "처리 유닛"
+    - "통신 모듈"
+    - "전력 소자"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false

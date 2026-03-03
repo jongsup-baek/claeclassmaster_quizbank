@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_02_001
   section: "2.1"
   section_title: "반도체는 어떻게 발전되어 왔을까"
-  type: mc
   question: "Apple M3 칩(2023)의 트랜지스터 개수는?"
   choices:
     - "160억 개"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_02_002
   section: "2.1"
   section_title: "반도체는 어떻게 발전되어 왔을까"
-  type: mc
   question: "반도체 집적도는 50년 동안 약 몇 배 증가했는가?"
   choices:
     - "1천 배"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_02_003
   section: "2.2"
   section_title: "완성된 반도체 단면"
-  type: fill_blank
   question: "FEOL은 (___) 가 만들어지는 부분이며, 소스, 드레인, 게이트를 포함한다."
-  answer: "트랜지스터"
+  choices:
+    - "금속 배선"
+    - "트랜지스터"
+    - "패키지"
+    - "커패시터"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_02_004
   section: "2.5"
   section_title: "파운드리 사업"
-  type: fill_blank
   question: "모리스 창이 창업한 회사는 (___) 이며, 철학은 \"고객과 경쟁하지 않는다\"이다."
-  answer: "TSMC"
+  choices:
+    - "Samsung"
+    - "TSMC"
+    - "Intel"
+    - "ASML"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false

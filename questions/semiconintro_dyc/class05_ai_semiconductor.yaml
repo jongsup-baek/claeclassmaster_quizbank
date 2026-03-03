@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_05_001
   section: "5.1"
   section_title: "AI 반도체의 필요성"
-  type: mc
   question: "AI 반도체가 필요한 가장 큰 이유는?"
   choices:
     - "기존 CPU가 너무 비싸서"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_05_002
   section: "5.2"
   section_title: "AI 반도체의 활용"
-  type: mc
   question: "구글의 AI 반도체는 무엇인가?"
   choices:
     - "GPU"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_05_003
   section: "5.3"
   section_title: "폰 노이만 구조와 CPU 한계"
-  type: fill_blank
   question: "폰 노이만 구조의 한계는 (___) 때문이다."
-  answer: "메모리 병목 현상"
+  choices:
+    - "전력 소비 증가"
+    - "트랜지스터 크기 한계"
+    - "메모리 병목 현상"
+    - "발열 문제"
+  answer: 3
   difficulty: 중
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_05_004
   section: "5.4"
   section_title: "GPU 병렬처리"
-  type: fill_blank
   question: "GPU는 수천 개의 연산 코어로 AI 연산에 최적화되어 CPU보다 훨씬 빠른 (___) 속도를 제공한다."
-  answer: "학습 및 추론"
+  choices:
+    - "데이터 전송"
+    - "학습 및 추론"
+    - "파일 처리"
+    - "네트워크 통신"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false

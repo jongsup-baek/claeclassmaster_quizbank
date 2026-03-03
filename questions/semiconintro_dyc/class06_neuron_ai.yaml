@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_06_001
   section: "6.1"
   section_title: "뉴런 구조와 신호 전달"
-  type: mc
   question: "뉴런의 신호 전달 경로 순서는?"
   choices:
     - "축삭→가지돌기→세포체→시냅스"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_06_002
   section: "6.2"
   section_title: "행렬곱과 AI 연산"
-  type: mc
   question: "뉴런의 연산이 수학적으로 표현되는 방식은?"
   choices:
     - "미분"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_06_003
   section: "6.1"
   section_title: "뉴런 구조와 신호 전달"
-  type: fill_blank
   question: "인간의 뇌에는 약 1000억개의 (___) 과 100조개의 시냅스가 있다."
-  answer: "뉴런"
+  choices:
+    - "축삭"
+    - "뉴런"
+    - "가지돌기"
+    - "세포체"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_06_004
   section: "6.3"
   section_title: "GPU와 CUDA"
-  type: fill_blank
   question: "GPU, NPU, TPU는 모두 (___) 연산을 (___) 수행해 AI를 가속한다."
-  answer: "행렬곱 / 병렬"
+  choices:
+    - "미분 / 순차"
+    - "행렬곱 / 병렬"
+    - "논리 / 직렬"
+    - "정렬 / 분산"
+  answer: 2
   difficulty: 중
   has_code: false
   has_image: false

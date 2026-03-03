@@ -1,7 +1,6 @@
 - id: semiconintro_dyc_03_001
   section: "3.1"
   section_title: "컴퓨터 기술의 진화와 AI 시대"
-  type: mc
   question: "제2세대 컴퓨터의 핵심 기술은?"
   choices:
     - "진공관"
@@ -21,7 +20,6 @@
 - id: semiconintro_dyc_03_002
   section: "3.2"
   section_title: "무어의 법칙"
-  type: mc
   question: "고든 무어가 1965년에 제안한 법칙은?"
   choices:
     - "옴의 법칙"
@@ -41,9 +39,13 @@
 - id: semiconintro_dyc_03_003
   section: "3.2"
   section_title: "무어의 법칙"
-  type: fill_blank
   question: "인텔의 공동 창업자 고든 (___) 는 트랜지스터 수가 약 2년마다 2배 증가한다고 제안했다."
-  answer: "무어"
+  choices:
+    - "노이스"
+    - "무어"
+    - "쇼클리"
+    - "킬비"
+  answer: 2
   difficulty: 하
   has_code: false
   has_image: false
@@ -56,9 +58,13 @@
 - id: semiconintro_dyc_03_004
   section: "3.1"
   section_title: "컴퓨터 기술의 진화와 AI 시대"
-  type: fill_blank
   question: "제4세대 컴퓨터 혁명은 (___) 의 발명으로 시작되었다."
-  answer: "마이크로프로세서"
+  choices:
+    - "트랜지스터"
+    - "IC칩"
+    - "마이크로프로세서"
+    - "인공지능"
+  answer: 3
   difficulty: 하
   has_code: false
   has_image: false
