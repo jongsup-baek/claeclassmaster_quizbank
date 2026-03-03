@@ -4,6 +4,10 @@
 Usage:
     python yaml2quiz_marp.py <yaml_file> [--output <output_file>] [--image-base <path>]
 
+출력 파일명 규칙:
+    --output 미지정 시 자동 생성: classNN_topic_marp_Q.md
+    (정렬: notes.md → lecture_marp.md → quiz_marp_Q.md 순서 보장)
+
 Examples:
     python yaml2quiz_marp.py questions/svbasic/class03_procedural.yaml
     python yaml2quiz_marp.py questions/svbasic/class03_procedural.yaml --output out.md
@@ -39,6 +43,7 @@ LECTURE_TITLES = {
         "03": "절차문과 절차 블록",
     },
     "semiconintro_dyc": {
+        "00": "오리엔테이션",
         "01": "반도체가 무엇인지 알아보기",
         "02": "반도체가 어떻게 만들어지는지 알아보기",
         "03": "컴퓨터가 어떻게 발전해왔는지 알아보기",
@@ -288,11 +293,20 @@ def convert(yaml_path: Path, image_base: str | None = None) -> str:
     return frontmatter + "\n\n" + "\n\n---\n\n".join(slides) + "\n"
 
 
+def auto_output_name(yaml_path: Path) -> str:
+    """YAML 파일명 → Marp 출력 파일명 자동 생성.
+
+    classNN_topic.yaml → classNN_topic_marp_Q.md
+    """
+    stem = yaml_path.stem  # e.g. "class03_procedural"
+    return f"{stem}_marp_Q.md"
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="YAML 퀴즈 → Marp 슬라이드 변환")
     parser.add_argument("yaml_file", help="입력 YAML 파일 경로")
-    parser.add_argument("--output", "-o", help="출력 파일 경로 (미지정 시 stdout)")
+    parser.add_argument("--output", "-o", help="출력 파일 경로 (미지정 시 자동 생성)")
     parser.add_argument("--image-base",
                         help="이미지 경로 베이스 (변환 시 이미지 경로 치환)")
     args = parser.parse_args()
@@ -306,12 +320,13 @@ def main():
 
     if args.output:
         output_path = Path(args.output)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(result)
-        print(f"변환 완료: {output_path}", file=sys.stderr)
     else:
-        print(result)
+        output_path = yaml_path.parent / auto_output_name(yaml_path)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(result)
+    print(f"변환 완료: {output_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":
