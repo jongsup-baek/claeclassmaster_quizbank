@@ -125,7 +125,7 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     pagination = f" ({section_idx}/{section_total})" if section_total > 1 else ""
 
     lines = [
-        f"## [문제] 🔖 {sec} {section_title}{pagination}",
+        f"## [문제] {sec} {section_title}{pagination}",
     ]
 
     # 2단 레이아웃: 이미지 또는 코드가 있으면 columns 시작
@@ -167,7 +167,7 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     pagination = f" ({section_idx}/{section_total})" if section_total > 1 else ""
 
     lines = [
-        f"## [해답] 🔖 {sec} {section_title}{pagination}",
+        f"## [해답] {sec} {section_title}{pagination}",
     ]
 
     if has_code:
