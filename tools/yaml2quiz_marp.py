@@ -242,14 +242,10 @@ def render_title_page(subject: str, class_num: str) -> str:
 
 
 def render_thank_you_page(sections: OrderedDict) -> str:
-    """Thank You 페이지 렌더링 (claeclassmaster #15 표준)."""
+    """Thank You 페이지 렌더링 (claeclassmaster #15 표준 — class02 기준)."""
     lines = [
-        "<!-- _class: end -->",
-        '<!-- _header: "" -->',
-        '<!-- _footer: "" -->',
-        "<!-- _paginate: false -->",
         "",
-        "# Thank You",
+        "## Thank You",
     ]
     # 섹션 목록 나열
     seen = set()
