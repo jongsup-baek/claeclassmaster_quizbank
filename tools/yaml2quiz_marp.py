@@ -125,7 +125,6 @@ def render_question_page(q: dict, q_num: int, section_idx: int,
     pagination = f" ({section_idx}/{section_total})" if section_total > 1 else ""
 
     lines = [
-        "",
         f"## [문제] 🔖 {sec} {section_title}{pagination}",
     ]
 
@@ -168,7 +167,6 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
     pagination = f" ({section_idx}/{section_total})" if section_total > 1 else ""
 
     lines = [
-        "",
         f"## [해답] 🔖 {sec} {section_title}{pagination}",
     ]
 
