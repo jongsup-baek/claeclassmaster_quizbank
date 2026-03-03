@@ -206,7 +206,8 @@ def render_answer_page(q: dict, q_num: int, section_idx: int,
 def render_frontmatter(subject: str, class_num: str) -> str:
     meta = COURSE_META.get(subject, COURSE_META["svbasic"])
     lecture_title = get_lecture_title(subject, class_num)
-    header_text = f"{class_num}강 Quiz - {lecture_title}" if lecture_title else f"{class_num}강 Quiz"
+    display_num = class_num.lstrip("0") or "0"
+    header_text = f"{display_num}강 Quiz - {lecture_title}" if lecture_title else f"{display_num}강 Quiz"
 
     lines = [
         "---",
@@ -223,7 +224,8 @@ def render_frontmatter(subject: str, class_num: str) -> str:
 def render_title_page(subject: str, class_num: str) -> str:
     meta = COURSE_META.get(subject, COURSE_META["svbasic"])
     lecture_title = get_lecture_title(subject, class_num)
-    subtitle = f"{class_num}강 Quiz: {lecture_title}" if lecture_title else f"{class_num}강 Quiz"
+    display_num = class_num.lstrip("0") or "0"
+    subtitle = f"{display_num}강 Quiz: {lecture_title}" if lecture_title else f"{display_num}강 Quiz"
 
     lines = [
         "<!-- _class: title -->",
