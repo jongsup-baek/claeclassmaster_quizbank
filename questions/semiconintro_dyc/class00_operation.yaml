@@ -1,0 +1,113 @@
+- id: semiconintro_dyc_00_001
+  section: "0.5"
+  section_title: "AI 시대의 기회"
+  question: "2025년 기준, 세계 휴머노이드 로봇 출하량 1위 기업은?"
+  choices:
+    - "현대자동차"
+    - "Tesla"
+    - "유니트리"
+    - "Boston Dynamics"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "유니트리(Unitree)는 2025년 G1 모델 5,500대를 출하하며 세계 1위를 기록했다"
+    - "2026년 2만 대 출하를 목표로 하며, 가격 파괴 전략으로 글로벌 시장을 선점하고 있다"
+    - "현대차(Atlas), Tesla(Optimus)도 휴머노이드를 개발 중이지만 출하량 기준으로는 유니트리가 압도적이다"
+  created: 2026-03-03
+
+- id: semiconintro_dyc_00_002
+  section: "0.6"
+  section_title: "AI 시대의 현실"
+  question: "AI 확산으로 전문서비스업(회계사·세무사·변호사) 취업자 수가 보인 변화는?"
+  choices:
+    - "소폭 증가"
+    - "변동 없음"
+    - "소폭 감소 후 반등"
+    - "사상 최대 감소폭 기록"
+  answer: 4
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "전문서비스업 취업자가 2개월 연속 최대 감소를 기록했다"
+    - "응답자 53%가 '5년 내 AI가 전문직을 대체할 것'이라고 답했다"
+    - "AI는 코딩, 전문직, 제조업 등 어떤 직업 계층도 예외 없이 영향을 미치고 있다"
+  created: 2026-03-03
+
+- id: semiconintro_dyc_00_003
+  section: "0.7"
+  section_title: "대화형 AI의 진화"
+  question: "AI가 외부 문서·데이터베이스를 검색하여 답변에 반영하는 기법은?"
+  choices:
+    - "프롬프트 엔지니어링"
+    - "RAG (검색 증강 생성)"
+    - "바이브 코딩"
+    - "멀티모달"
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "RAG(Retrieval-Augmented Generation)는 AI가 외부 문서·데이터베이스를 검색하여 답변에 반영하는 기법이다"
+    - "예를 들어 회사 내부 매뉴얼을 연결하면 그 내용을 기반으로 정확하게 답변한다"
+    - "프롬프트 엔지니어링은 질문 구성 기법, 멀티모달은 텍스트·이미지·음성을 넘나드는 능력이다"
+  created: 2026-03-03
+
+- id: semiconintro_dyc_00_004
+  section: "0.8"
+  section_title: "콘텐츠 생성의 변화"
+  question: "텍스트에서 영상을 생성하는 Text-to-Video 기술이 본격 등장한 시기는?"
+  choices:
+    - "2022년"
+    - "2023년"
+    - "2024년"
+    - "2025년"
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+    - "2024년 OpenAI Sora, Google Veo 등의 등장으로 Text-to-Video 기술이 본격화되었다"
+    - "2023년에는 Text-to-Image(텍스트→이미지)가 화제였고, 2024년에 영상 생성으로 확장되었다"
+    - "2025년부터는 하나의 AI가 이미지·영상·디자인을 통합 생성하는 멀티모달 시대가 열렸다"
+  created: 2026-03-03
+
+- id: semiconintro_dyc_00_005
+  section: "0.9"
+  section_title: "학습·연구·개발의 변화"
+  question: "코드를 모르는 사람도 자연어로 앱을 만드는 개발 방식을 무엇이라 하는가?"
+  choices:
+    - "프롬프트 엔지니어링"
+    - "AI 워크플로우"
+    - "바이브 코딩"
+    - "RAG"
+  answer: 3
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "바이브 코딩(Vibe Coding)은 Andrej Karpathy가 2025년 명명한 개념이다"
+    - "'이런 앱 만들어줘'라고 자연어로 말하면 AI가 코드를 작성하는 방식이다"
+    - "Cursor, Claude Code, Bolt 등의 도구가 바이브 코딩을 지원하며, 비전공자도 앱을 만들 수 있게 되었다"
+  created: 2026-03-03
+
+- id: semiconintro_dyc_00_006
+  section: "0.10"
+  section_title: "AI 활용 윤리"
+  question: "AI가 그럴듯하지만 사실이 아닌 정보를 자신 있게 생성하는 현상은?"
+  choices:
+    - "딥페이크"
+    - "할루시네이션"
+    - "프롬프트 인젝션"
+    - "데이터 편향"
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+    - "할루시네이션(Hallucination)은 AI가 사실이 아닌 정보를 그럴듯하게 생성하는 현상이다"
+    - "2023년 미국 변호사가 AI가 생성한 존재하지 않는 판례를 법정에 인용하여 징계받은 사건이 대표적이다"
+    - "딥페이크는 AI로 만든 가짜 영상·음성이고, 프롬프트 인젝션은 AI 시스템을 속이는 공격 기법이다"
+  created: 2026-03-03
