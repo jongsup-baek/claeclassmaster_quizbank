@@ -10,12 +10,7 @@
   answer: 2
   difficulty: 하
   has_code: false
-  has_image: true
-  image:
-    path: "./images/class02_2_3.drawio.svg"
-    w: 800
-    layout: full
-  image_alt: "SystemVerilog 데이터 타입 분류 계층도"
+  has_image: false
   explanation:
   - SystemVerilog의 데이터 타입은 표현 가능한 값의 수에 따라 2-state와 4-state로 나뉜다.
   - 2-state 타입(bit, byte, shortint, int, longint)은 0과 1만 표현할 수 있어 시뮬레이션 속도가 빠르지만,

@@ -1,13 +1,13 @@
 svbasic:
   questions_dir: ../claeclassmaster_quizbank/questions/svbasic/
-  deploy_to: ../course_sv/class_svbasic/svbasic_dev_2026_1/lecture_svbasic/
-  image_base: ./images
+  deploy_to: ../course_sv/class_svbasic/svbasic_dev_2026_1/lecture_svbasic/quiz/
+  image_base: ../images
   theme_src: themes/konyang-theme.css
   theme_dst: ../course_sv/class_svbasic/themes/konyang-theme.css
 
 semiconintro_dyc:
   questions_dir: ../claeclassmaster_quizbank/questions/semiconintro_dyc/
-  deploy_to: ../course_semiconintro/class_semiconintro_dyc/semiconintro_dyc_kyu_2026_1/lecture_semiconintro_dyc/
-  image_base: ./images
+  deploy_to: ../course_semiconintro/class_semiconintro_dyc/semiconintro_dyc_kyu_2026_1/lecture_semiconintro_dyc/quiz/
+  image_base: ../images
   theme_src: themes/konyang-theme.css
   theme_dst: ../course_semiconintro/class_semiconintro_dyc/themes/konyang-theme.css

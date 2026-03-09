@@ -10,6 +10,7 @@
 - `explanation_quality.md` — 해설 품질 원칙 (교재 노트 기반, 용어 일관성, 깊이 일관성)
 - `question_scope.md` — 문제 출제 범위 원칙 (섹션 내 출제, 섹션당 2문제)
 - `image_usage.md` — 이미지 활용 원칙 (교재 이미지 재사용, 경로 규칙)
+- `release_workflow.md` — 릴리즈 및 Lab 업데이트 워크플로우
 
 ## 2. 참조
 
