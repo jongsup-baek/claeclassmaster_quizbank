@@ -1,0 +1,266 @@
+- id: svbasic_04_001
+  section: '4.2'
+  section_title: Assignment Operators의 종류와 의미
+  question: Assignment Operator(+=, -= 등)를 사용할 수 없는 블록은?
+  choices:
+  - initial 블록
+  - always_comb 블록
+  - always_ff 블록
+  - 테스트벤치 모듈
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+  - Assignment Operator는 내부적으로 blocking 대입(=)을 사용하므로 논블로킹 대입(<=)만 허용되는 always_ff에서는 사용할 수 없다.
+  - initial 블록, always_comb, 테스트벤치에서는 blocking 대입이 허용되므로 사용 가능하다.
+  - 순차 논리(always_ff)에서는 반드시 <= 만 사용해야 하드웨어 합성 결과가 올바르게 나온다.
+  created: '2026-03-10'
+- id: svbasic_04_002
+  section: '4.2'
+  section_title: Assignment Operators의 종류와 의미
+  question: "다음 코드 실행 후 a의 값은?"
+  choices:
+  - '1'
+  - '2'
+  - '3'
+  - '5'
+  answer: 3
+  difficulty: 중
+  has_code: true
+  code: |
+    initial begin
+      a= 1;
+      b= 2;
+      a += b;
+      $display("a= %d", a);
+    end
+  has_image: false
+  explanation:
+  - a += b는 a = a + b와 동일하므로 a = 1 + 2 = 3이 된다.
+  - Assignment Operator는 연산과 대입을 동시에 수행하는 축약 표현이다.
+  - blocking 대입이므로 다음 줄에서 바로 새 값이 사용된다.
+  created: '2026-03-10'
+- id: svbasic_04_003
+  section: '4.3'
+  section_title: ++, -- 연산자
+  question: "b= 1일 때 a= b++; 실행 후 a와 b의 값은?"
+  choices:
+  - a= 2, b= 2
+  - a= 1, b= 2
+  - a= 1, b= 1
+  - a= 2, b= 1
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - 후위형(b++)은 현재 값을 먼저 사용한 후 증감하므로 a에는 b의 현재 값 1이 대입된다.
+  - 대입 후 b가 1 증가하여 b= 2가 된다.
+  - 전위형(++b)이었다면 b가 먼저 증가하여 a= 2, b= 2가 된다.
+  created: '2026-03-10'
+- id: svbasic_04_004
+  section: '4.3'
+  section_title: ++, -- 연산자
+  question: "b= 3일 때 a= --b; 실행 후 a와 b의 값은?"
+  choices:
+  - a= 3, b= 2
+  - a= 2, b= 2
+  - a= 3, b= 3
+  - a= 2, b= 3
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - 전위형(--b)은 먼저 b를 감소시킨 후 그 값을 사용하므로 b= 2가 되고 a에도 2가 대입된다.
+  - 후위형(b--)이었다면 현재 값 3을 먼저 대입하고 이후 b가 감소하여 a= 3, b= 2가 된다.
+  - 독립 문장(--b;)으로 사용하면 전위/후위 차이가 없다.
+  created: '2026-03-10'
+- id: svbasic_04_005
+  section: '4.4'
+  section_title: ==?, wildcard equivalence 연산자
+  question: "a= 4'b0101, b= 4'b01XZ일 때 (a ==? b)의 결과는?"
+  choices:
+  - '0'
+  - '1'
+  - X
+  - Z
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - ==? 연산자는 오른쪽 피연산자(b)의 X, Z 비트를 don't care로 처리한다.
+  - b의 하위 2비트 XZ가 무시되고 상위 2비트 01만 비교하므로 a의 01과 일치하여 결과는 1이다.
+  - ==? 비교 결과는 항상 0 또는 1이며 X가 되지 않는다는 점이 == 연산자와 다르다.
+  created: '2026-03-10'
+- id: svbasic_04_006
+  section: '4.4'
+  section_title: ==?, wildcard equivalence 연산자
+  question: "a= 4'b0101, b= 4'b01XZ일 때 (a == b)의 결과는?"
+  choices:
+  - '0'
+  - '1'
+  - X
+  - Z
+  answer: 3
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - 논리적 동등 연산자(==)는 피연산자에 X나 Z가 포함되면 결과도 X가 된다.
+  - b에 X, Z 비트가 포함되어 있으므로 비교 결과가 확정되지 않아 X를 반환한다.
+  - 동일성 연산자(===)는 X, Z도 정확히 일치해야 하므로 이 경우 0을 반환한다.
+  created: '2026-03-10'
+- id: svbasic_04_007
+  section: '4.5'
+  section_title: inside, Set Membership 연산자
+  question: "a= 2'b01일 때 (a inside {2'b01, 2'b10})의 결과는?"
+  choices:
+  - '0'
+  - '1'
+  - X
+  - 컴파일 에러
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+  - inside 연산자는 왼쪽 값이 오른쪽 집합에 포함되는지 검사한다.
+  - a= 2'b01이 집합 {2'b01, 2'b10}에 포함되므로 결과는 1이다.
+  - 이 표현은 if ((a == 2'b01) || (a == 2'b10))과 동일하지만 더 간결하다.
+  created: '2026-03-10'
+- id: svbasic_04_008
+  section: '4.5'
+  section_title: inside, Set Membership 연산자
+  question: "b= 5, bar= '{5,6}일 때 (b inside {bar, [0:2]})의 결과는?"
+  choices:
+  - '0'
+  - '1'
+  - X
+  - 컴파일 에러
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - inside 연산자의 집합에는 개별 값, 범위 [lo:hi], 배열 변수를 모두 사용할 수 있다.
+  - "bar= '{5,6}이므로 집합은 {5, 6, 0, 1, 2}로 펼쳐진다."
+  - b= 5가 이 집합에 포함되므로 결과는 1이다.
+  created: '2026-03-10'
+- id: svbasic_04_009
+  section: '4.6'
+  section_title: case inside, 범위 매칭 연산자
+  question: casez 대신 case inside를 사용하는 주요 장점은?
+  choices:
+  - 실행 속도가 더 빠르다
+  - 비트 경계와 무관한 범위 비교가 가능하다
+  - X, Z 비트를 양쪽 피연산자 모두에서 무시한다
+  - Verilog와 하위 호환된다
+  answer: 2
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+  - casez는 ? 비트로 don't care를 지정하므로 비트 경계에 맞는 범위만 표현할 수 있다.
+  - case inside는 [lo:hi] 범위, 개별 값, 와일드카드를 자유롭게 혼합할 수 있어 더 유연하다.
+  - casez는 입력과 선택지 양쪽의 Z를 무시하지만, case inside는 선택지의 Z만 무시한다는 차이도 있다.
+  created: '2026-03-10'
+- id: svbasic_04_010
+  section: '4.6'
+  section_title: case inside, 범위 매칭 연산자
+  question: "b= 4일 때 다음 코드에서 출력되는 메시지는?"
+  choices:
+  - '"0 or 2"'
+  - '"3 or 4 or 5"'
+  - '"1 or 6 or 7"'
+  - '"value > 7"'
+  answer: 2
+  difficulty: 중
+  has_code: true
+  code: |
+    case(b) inside
+      0, 2     : $display("0 or 2");
+      [3:5]    : $display("3 or 4 or 5");
+      1, [6:7] : $display("1 or 6 or 7");
+      default  : $display("value > 7");
+    endcase
+  has_image: false
+  explanation:
+  - b= 4는 [3:5] 범위(3, 4, 5)에 포함되므로 "3 or 4 or 5"가 출력된다.
+  - case 문은 첫 번째로 매칭되는 선택지만 실행하고 종료한다.
+  - case inside는 비트 경계와 무관한 범위와 개별 값의 혼합을 지원한다.
+  created: '2026-03-10'
+- id: svbasic_04_011
+  section: '4.7'
+  section_title: 연산자 우선순위 및 결합 규칙
+  question: SystemVerilog에서 연산자 우선순위가 가장 높은 것은?
+  choices:
+  - 논리 연산자(&&, ||)
+  - 단항 연산자(!, ~, ++, --)
+  - 괄호 및 접근((), [], ::, .)
+  - 동등 연산자(==, !=, ===)
+  answer: 3
+  difficulty: 하
+  has_code: false
+  has_image: false
+  explanation:
+  - 연산자 우선순위는 괄호/접근 > 단항 > 곱셈 > 덧셈 > 시프트 > 관계 > 동등 > 비트 > 논리 > 조건 > 대입 순이다.
+  - 괄호와 멤버 접근(., ::)이 가장 먼저 평가되므로 복합 표현식의 평가 순서를 제어할 수 있다.
+  - 복합 표현식에서는 우선순위에 의존하기보다 괄호로 의도를 명시하는 것이 좋다.
+  created: '2026-03-10'
+- id: svbasic_04_012
+  section: '4.7'
+  section_title: 연산자 우선순위 및 결합 규칙
+  question: "조건 연산자(?:)의 결합 방향은?"
+  choices:
+  - 좌→우 (왼쪽부터 평가)
+  - 우→좌 (오른쪽부터 평가)
+  - 결합 없음
+  - 컴파일러에 따라 다름
+  answer: 2
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - 조건 연산자(?:)는 우→좌 결합이므로 a?b:c?d:e는 a?b:(c?d:e)로 평가된다.
+  - 대부분의 이항 연산자(+, -, *, ==, && 등)는 좌→우 결합이다.
+  - 단항 연산자(!, ~, ++, --)도 우→좌 결합이다.
+  created: '2026-03-10'
+- id: svbasic_04_013
+  section: '4.8'
+  section_title: array assignment pattern
+  question: "int a[3:0]= '{0,1,2,3}; 에서 a[3]의 값은?"
+  choices:
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  answer: 1
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - "배열 할당 패턴 '{...}은 왼쪽부터 높은 인덱스 순으로 값을 할당한다."
+  - "'{0,1,2,3}에서 첫 번째 값 0이 a[3]에, 마지막 값 3이 a[0]에 할당된다."
+  - "비트 연결({...})과 달리 어포스트로피가 붙은 '{...}은 요소별 할당이다."
+  created: '2026-03-10'
+- id: svbasic_04_014
+  section: '4.8'
+  section_title: array assignment pattern
+  question: "int b[3:0]= '{3:1, default:0}; 에서 b[2]의 값은?"
+  choices:
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  answer: 1
+  difficulty: 중
+  has_code: false
+  has_image: false
+  explanation:
+  - 키 할당에서 3:1은 b[3]에만 값 1을 설정한다.
+  - default:0은 명시적으로 지정되지 않은 나머지 요소(b[2], b[1], b[0])를 모두 0으로 채운다.
+  - default 키워드를 활용하면 대용량 메모리도 한 줄로 초기화할 수 있다.
+  created: '2026-03-10'
